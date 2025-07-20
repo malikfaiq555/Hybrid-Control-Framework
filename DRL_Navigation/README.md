@@ -1,5 +1,3 @@
----
-
 ## 🟩 `README.md` for `drl_navigation/`
 
 ```markdown
