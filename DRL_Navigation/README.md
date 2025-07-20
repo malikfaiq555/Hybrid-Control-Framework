@@ -1,13 +1,3 @@
-Perfect! Here’s a **well-structured README** template for your `drl_navigation/` directory. It:
-
-* Explains what the module does and how to use it.
-* Highlights that you can swap launch/world files or use your own robot.
-* Clearly links to your training video (add the file or YouTube link where indicated).
-* Documents each script and workflow.
-* Mentions compatibility and customization.
-
----
-
 ## 🟩 `README.md` for `drl_navigation/`
 
 ```markdown
@@ -30,7 +20,6 @@ This module enables Deep Reinforcement Learning navigation training and simulati
 
 ## 📂 Directory Structure
 
-```
 
 drl\_navigation/
 ├── README.md
