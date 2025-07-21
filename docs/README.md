@@ -12,8 +12,11 @@ Here’s a clean and intuitive README structure addressing your points clearly:
 
 ## 🎬 **Project Demo**
 
-> **[Main Demo Video](./docs/demo_videos/Main Page.mp4)**
-> *(Recommended: Embed directly on the GitHub README page.)*
+## 🎬 Project Demo
+
+[![Demo](./docs/demo_videos/demo_preview.gif)](./docs/demo_videos/landing_page.mp4)  
+*[▶️ Click the GIF to watch the full demo video.](./docs/demo_videos/landing_page.mp4)*
+
 
 <details>
 <summary>▶️ Click to watch demo</summary>
