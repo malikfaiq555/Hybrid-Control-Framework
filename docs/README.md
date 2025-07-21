@@ -1,4 +1,3 @@
-Here’s a clean and intuitive README structure addressing your points clearly:
 
 ---
 
@@ -10,12 +9,12 @@ Here’s a clean and intuitive README structure addressing your points clearly:
 
 ---
 
-## 🎬 **Project Demo**
-
 ## 🎬 Project Demo
 
-[![Demo](./docs/demo_videos/demo_preview.gif)](./docs/demo_videos/landing_page.mp4)  
+[![Project Demo](./docs/demo_videos/demo_preview.gif)](./docs/demo_videos/landing_page.mp4)  
 *[▶️ Click the GIF to watch the full demo video.](./docs/demo_videos/landing_page.mp4)*
+
+
 
 
 <details>
