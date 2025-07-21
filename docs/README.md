@@ -11,18 +11,11 @@
 
 ## 🎬 Project Demo
 
-[![Project Demo](./docs/demo_videos/demo_preview.gif)](./docs/demo_videos/landing_page.mp4)  
-*[▶️ Click the GIF to watch the full demo video.](./docs/demo_videos/landing_page.mp4)*
+![Project Demo](./demo_videos/demo_preview.gif) 
+
+*[▶️ Click to watch the full demo video.](./demo_videos/landing_page.mp4)*
 
 
-
-
-<details>
-<summary>▶️ Click to watch demo</summary>
-
-*(Insert embedded video or GIF preview here)*
-
-</details>
 
 ---
 
