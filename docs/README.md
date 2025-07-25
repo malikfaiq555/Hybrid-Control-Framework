@@ -46,10 +46,10 @@ This repository accompanies the research presented in our published article:
 
 ## **Quick Navigation**
 
-* **VR Application**: [`/VR-app/README.md`](/VR-app/README.md)
-* **ROS Integration**: [`/ros_integration/README.md`](/ros_integration/README.md)
-* **DRL Navigation (TD3)**: [`/drl_navigation/README.md`](/drl_navigation/README.md)
-* **Real Robot Deployment**: [`/real_robot_deployment/README.md`](/real_robot_deployment/README.md)
+* **VR Application**: [`/VR-App/README.md`](/VR-App/README.md)
+* **ROS Integration**: [`/Ros-Integration/README.md`](/Ros-Integration/README.md)
+* **DRL Navigation (TD3)**: [`/DRL_Navigation/README.md`](/DRL_Navigation/README.md)
+* **Real Robot Deployment**: [`/Real_Robot_Deployment/README.md`](/Real_Robot_Deployment/README.md)
 
 ---
 
