@@ -8,7 +8,7 @@
 ***This repository demonstrates the **Distributed Supervisory Control (DSC)** method, a novel approach that intelligently combines human teleoperation via Virtual Reality (VR) and Deep Reinforcement Learning (DRL)-based autonomous navigation, validated both in simulation and real-world TurtleBot3 Burger robot deployments.***
 ---
 
-## 🎬 Project Demo
+## Project Demo
 
 ![Project Demo](./demo_videos/demo_preview.gif) 
 
@@ -17,7 +17,7 @@
 
 ---
 
-## 📚 **Published Research**
+## **Published Research**
 
 This repository accompanies the research presented in our published article:
 
@@ -44,7 +44,7 @@ This repository accompanies the research presented in our published article:
 ```
 ---
 
-## 🚦 **Quick Navigation**
+## **Quick Navigation**
 
 * **VR Application**: [`/VR-app/README.md`](/VR-app/README.md)
 * **ROS Integration**: [`/ros_integration/README.md`](/ros_integration/README.md)

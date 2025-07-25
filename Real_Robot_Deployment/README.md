@@ -1,9 +1,4 @@
-Absolutely! Here’s a **clear, practical README** template for your `real_robot_deployment/` directory.
-This is aimed at someone who has a TurtleBot3, trained weights, and wants to run/test the DRL navigation in the real world (with optional demo video, references, and multi-machine ROS instructions).
-
 ---
-
-```markdown
 # Real Robot Deployment — TurtleBot3 + TD3 Navigation
 
 This module lets you deploy and test your trained **TD3 navigation policy** on a real TurtleBot3 Burger via ROS!  
@@ -11,119 +6,115 @@ You can send goals from VR, RViz, or a teleop interface, and watch your robot na
 
 ---
 
-## 📽️ Demo
-
-Watch a short clip of real-world DRL navigation:  
-[![Demo Video](https://img.youtube.com/vi/XXXXXXXXXXX/0.jpg)](https://youtu.be/XXXXXXXXXXX)  
-_Or see the `real_demo.mp4` video file in this directory (if included)._
-
----
-
-## 📦 Directory Contents
+##  Directory Contents
 
 ```
 
-real\_robot\_deployment/
+real_robot_deployment/
 ├── README.md
 ├── scripts/
-│   ├── real\_env.py                # Real-world TurtleBot3 environment (ROS)
-│   ├── test\_td3\_tb3\_real.py       # Script: run trained model on real robot
-│   └── ...                        # (Any other helper/teleop scripts)
-├── model\_weights/
-│   ├── TD3\_tb3\_actor.pth
-│   └── TD3\_tb3\_critic.pth
-├── real\_demo.mp4                  # (Optional demo video file)
-└── deployment\_configs/            # (Optional: networking/config guides)
+│   ├── real_env.py                 # Real-world TurtleBot3 environment (ROS)
+│   └──  test_td3_tb3_real.py       # Script: run trained model on real robot
+│                           
+└──  model_weights/
+    ├── TD3_tb3_actor.pth
+    └── TD3_tb3_critic.pth
 
-````
 
----
-
-## 🔧 Setup & Requirements
-
-- **Hardware:** TurtleBot3 Burger (or compatible ROS robot with 2D lidar and odometry)
-- **Software:** ROS (Melodic/Noetic recommended), Python 3.8+, PyTorch, numpy, squaternion
-- **Network:** PC and TurtleBot3 must be on the same WiFi/LAN and configured for multi-machine ROS (see below)
+```
 
 ---
 
-## 🌐 Multi-Machine ROS: Quick Setup
+## Setup & Requirements
 
-On your **PC** (ROS master):
+* **Hardware** TurtleBot3 Burger (or any ROS 1 robot with 2-D LiDAR + odometry)  
+* **Software** ROS Noetic / Melodic, Python 3.8+, PyTorch, `numpy`, `squaternion`  
+* **Network** Robot and PC on the **same subnet** (tested on a single Wi-Fi AP).  
+
+> **Different networks?** See the _Networking guide_ below.
+
+---
+
+## Multi-Machine ROS (same LAN)
+
+On the **PC (ROS master)**
+
 ```bash
 export ROS_MASTER_URI=http://<PC_IP>:11311
 export ROS_HOSTNAME=<PC_IP>
+roscore
 ````
 
-On the **TurtleBot3**:
+On the **TurtleBot3**
 
 ```bash
 export ROS_MASTER_URI=http://<PC_IP>:11311
 export ROS_HOSTNAME=<ROBOT_IP>
 ```
 
-* You can find your IP with `hostname -I` or `ifconfig`.
-* See [TurtleBot3 SBC Setup Guide](https://emanual.robotis.com/docs/en/platform/turtlebot3/sbc_setup/#network-configuration) and [ROS Multi-Machine](http://wiki.ros.org/ROS/NetworkSetup) for troubleshooting.
+Check connectivity with `rostopic list` from each machine.
+(ROS uses TCPROS on port 11311 for the master and dynamic ports for node-to-node traffic).
 
 ---
 
-## 🚀 How to Run
+## Networking guide (different subnets / the public internet)
 
-1. **Copy trained model weights** to `real_robot_deployment/model_weights/` (`TD3_tb3_actor.pth`, `TD3_tb3_critic.pth`).
-2. **Boot up TurtleBot3** and start ROS bringup:
+| Option                          | What to do                                                                                                                                                                                     | Notes                                                                                                                                     |
+| ------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| **Static IP + Port Forwarding** | Forward **port 11311** (ROS master) **and a range** of high ports (e.g. 50000-60000) from your router to the PC running `roscore`. Then set `ROS_TCP_PORT_RANGE=50000-60000` on every machine. | Works but scales poorly; every ROS node still opens random ports that must be reachable ([Robotics Stack Exchange][2], [ROS Answers][3]). |
+| **VPN (preferred)**             | Use ZeroTier, WireGuard, or Tailscale to put the PC and robot in the **same virtual subnet**. Then follow the standard multi-machine steps above.                                              | No port juggling; behaves like a local LAN.                                                                                               |
+| **SSH tunnel / rosbridge**      | Tunnel only the topics you need (`rosbridge_websocket` or `ssh -L`) if full ROS graph isn’t required.                                                                                          | Good for dashboards or lightweight teleop.                                                                                                |
+
+---
+
+## How to Run
+
+1. Copy the trained weights to `model_weights/`:
+
+   ```
+   TD3_tb3_actor.pth
+   TD3_tb3_critic.pth
+   ```
+2. On the robot:
 
    ```bash
    roslaunch turtlebot3_bringup turtlebot3_robot.launch
    ```
-3. **(Optional)** Start RViz or your VR/teleop goal-publisher.
-4. **From your PC**, run the test script:
+3. (Optional) Start RViz, VR‐goal publisher, or any teleop node.
+4. On the PC:
 
    ```bash
-   cd real_robot_deployment/scripts/
+   cd real_robot_deployment/scripts
    python3 test_td3_tb3_real.py
    ```
-5. **Send a goal** (via VR, teleop, or `/pos_rot` publisher).
-   The robot should begin autonomous navigation!
+5. Send a goal; the robot should drive autonomously.
 
 ---
 
-## ⚠️ Safety & Best Practices
+## Safety Checklist
 
-* Always supervise your robot in real-world experiments.
-* Test in a safe, open area before moving to cluttered environments.
-* Stop the script or press the robot’s power button for an emergency stop.
-
----
-
-## 📝 Customization
-
-* **Different robot?**
-  Edit `real_env.py` to match your lidar, odometry, and velocity topic names.
-
-* **Goal input:**
-  The default expects a custom `/pos_rot` message (from VR or teleop).
-  Adapt as needed for other goal interfaces.
+* Supervise the robot at all times.
+* Start in an open space and increase complexity gradually.
+* Keep an emergency-stop key or power switch within reach.
 
 ---
 
-## 📚 References
+## Customization
 
-* [TurtleBot3 Documentation](https://emanual.robotis.com/docs/en/platform/turtlebot3/overview/)
-* [ROS Networking/Multi-Machine](http://wiki.ros.org/ROS/NetworkSetup)
-* [TD3-robot-navigation (base code)](https://github.com/reiniscimurs/DRL-robot-navigation)
-
----
-
-*Questions? Issues? Open an issue or PR!*
-
-```
+* **Different robot** Edit topic names in `real_env.py`.
+* **Goal interface** `test_td3_tb3_real.py` expects a custom `/pos_rot` goal topic; adapt as needed.
 
 ---
 
-**How to use:**
-- Replace the YouTube/video link with your actual demo, or keep the local `.mp4` as a download in the repo.
-- Add any more instructions if you want to support other robots.
-- Add or reference markdowns in `deployment_configs/` if you want more in-depth network troubleshooting.
+## References
 
-Let me know if you want edits or extra usage notes!
-```
+* ROS multi-machine tutorial  ([ROS Wiki][1])
+* Port requirements for ROS nodes  ([Robotics Stack Exchange][2])
+* ROS behind NAT discussion  ([ROS Answers][3])
+
+---
+
+
+[1]: https://wiki.ros.org/ROS/Tutorials/MultipleMachines?utm_source=chatgpt.com "ROS/Tutorials/MultipleMachines - ROS Wiki"
+[2]: https://robotics.stackexchange.com/questions/64220/which-ports-are-needed-for-ros?utm_source=chatgpt.com "which ports are needed for ROS? - Robotics Stack Exchange"
+[3]: https://answers.ros.org/question/364321/?utm_source=chatgpt.com "ROS Networking question: Strategies for reaching a roscore behind a NAT ..."

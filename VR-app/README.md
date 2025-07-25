@@ -2,16 +2,19 @@ This directory contains scripts and components designed for integrating ROS (Rob
 
 ---
 
-## 🗂️ Directory Structure
+## Directory Structure
 
 ```
-Scripts/
-├── CompressedImageRenderer.cs
-├── RobotInfoDisplay.cs
-├── RobotMotionSync.cs
-├── LaserScanVisualizer.cs
-├── ROSPosePublisher.cs
-├── VRRobotController.cs
+VR_app/
+├── README.md
+├── scripts/
+│   ├── CompressedImageRenderer.cs
+│   ├── RobotInfoDisplay.cs
+│   ├── RobotMotionSync.cs
+│   ├── LaserScanVisualizer.cs
+│   ├── ROSPosePublisher.cs
+│   └── VRRobotController.cs
+└── assets/
 ```
 
 ---
@@ -27,7 +30,7 @@ Scripts/
 
 ---
 
-## 🚀 Usage Overview
+## Usage Overview
 
 ### 1. ROSCompressedImageSubscriber.cs
 
@@ -116,7 +119,7 @@ Scripts/
 
 ---
 
-## 🎮 Dynamic Interaction and Customization
+## Dynamic Interaction and Customization
 
 * **Static vs. Dynamic Goals**:
   Currently, robot goals and waypoints are predefined. Users may consider adding dynamic goal-setting functionality through VR interactions such as:
@@ -131,7 +134,7 @@ Scripts/
 
 ---
 
-## 🖥️ Useful Resources & References
+##  Useful Resources & References
 
 * [Unity Robotics Hub Official Repository](https://github.com/Unity-Technologies/Unity-Robotics-Hub)
 * [ROS Official Documentation](https://wiki.ros.org/)
@@ -141,7 +144,7 @@ Scripts/
 
 ---
 
-## 📌 Final Notes
+## Notes
 
 * Ensure your ROS master and Unity instances are configured correctly and connected to the same network.
 * Carefully verify topic names and message types in both ROS and Unity scripts.

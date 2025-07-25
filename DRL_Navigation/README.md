@@ -1,6 +1,4 @@
-## 🟩 `README.md` for `drl_navigation/`
 
-```markdown
 # DRL Navigation Module (TD3, ROS, Gazebo)
 
 This module enables Deep Reinforcement Learning navigation training and simulation in ROS/Gazebo, with **TD3** (Twin Delayed DDPG) and tested for TurtleBot3 Burger.  
@@ -8,7 +6,7 @@ This module enables Deep Reinforcement Learning navigation training and simulati
 
 ---
 
-## 🚀 Quick Overview
+## Quick Overview
 
 - **Train a DRL agent** to navigate to random goals in simulation (Gazebo + ROS).
 - **Evaluate/test** your trained model in simulation.
@@ -18,38 +16,37 @@ This module enables Deep Reinforcement Learning navigation training and simulati
 
 ---
 
-## 📂 Directory Structure
+## Directory Structure
 
-
-drl\_navigation/
+```
+drl_navigation/
 ├── README.md
 ├── scripts/
-│   ├── train\_td3\_tb3.py         # Training script (TD3, editable)
-│   ├── test\_td3\_tb3.py          # Evaluation script
-│   ├── td3\_env.py               # Gazebo RL environment (customizable for your robot)
-│   ├── replay\_buffer.py         # Experience replay buffer
-│   └── ...                      # (You can add custom scripts/experiments here)
-├── model\_weights/               # Saved models/checkpoints
-│   ├── TD3\_tb3\_actor.pth
-│   ├── TD3\_tb3\_critic.pth
-│   └── ...
-├── results/                     # Evaluation results, metrics
-└── training\_demo.mp4            # (or link: see below)
-
-````
+│   ├── train_td3_tb3.py         # Training script (TD3, editable)
+│   ├── test_td3_tb3.py          # Evaluation script
+│   ├── td3_env.py               # Gazebo RL environment (customizable for your robot)
+│   └──  replay_buffer.py        # Experience replay buffer
+│   
+└── model_weights/               # Saved models/checkpoints
+    ├── TD3_tb3_actor.pth
+    └──  TD3_tb3_critic.pth
+    
+```
 
 ---
 
-## 🎥 Demo Video
+## Demo Video
 
 See DRL training in action on TurtleBot3 in Gazebo:
 
-- [![Training Demo Video](https://img.youtube.com/vi/XXXXXXXXXXX/0.jpg)](https://youtu.be/XXXXXXXXXXX)
-- **OR**: Download or preview `training_demo.mp4` in this directory.
+![Training Preview](/docs/demo_videos/Training-preview.gif) 
+
+*[▶️ Click to watch the full demo video.](/docs/demo_videos/Training.mp4)*
+
 
 ---
 
-## 🛠️ Getting Started
+## Getting Started
 
 ### Requirements
 
@@ -97,7 +94,7 @@ python test_td3_tb3.py
 
 ---
 
-## 🧠 How It Works
+## How It Works
 
 * **RL agent:** TD3 (twin delayed deep deterministic policy gradients)
 * **Environment:** Goal is placed randomly, robot receives pointcloud/lidar input, odometry, computes reward.
@@ -106,10 +103,14 @@ python test_td3_tb3.py
 
 ---
 
-## 📌 References
+## References
 
 * Algorithm: [Fujimoto et al., 2018 - TD3](https://arxiv.org/abs/1802.09477)
 * Original code inspiration: [DRL-robot-navigation](https://github.com/reiniscimurs/DRL-robot-navigation)
-* Customization for TurtleBot3 Burger with native 2D lidar.
+* TurtleBot3 platform: [TurtleBot3 Quick Start](https://emanual.robotis.com/docs/en/platform/turtlebot3/quick-start/)
 
 ---
+
+
+
+

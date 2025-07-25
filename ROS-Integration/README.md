@@ -84,9 +84,6 @@ Each script is well-commented for learning and adaptation.
   Install with:
 pip install pandas numpy
 
-yaml
-Copy
-Edit
 - **Custom messages:**  
 - For VR/Unity scripts, build [unity_robotics_demo_msgs](https://github.com/Unity-Technologies/Unity-Robotics-Hub) in your catkin workspace.
 
@@ -97,23 +94,16 @@ Edit
 1. **Source your ROS workspace:**
 source devel/setup.bash
 
-markdown
-Copy
-Edit
 2. **Run a script:**
 rosrun ros_integration odom_goal_nav.py
-
-yaml
-Copy
-Edit
 (Replace with any script from this directory.)
+
 3. **Check the logs or output files (e.g., CSV) as needed.**
 
 ---
 
 ## References
 
-- [TurtleBot3 on ROS Wiki](http://wiki.ros.org/turtlebot3)
 - [Unity Robotics Hub](https://github.com/Unity-Technologies/Unity-Robotics-Hub)
 - [ROS Navigation Stack](http://wiki.ros.org/navigation)
 
