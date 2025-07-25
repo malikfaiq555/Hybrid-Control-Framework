@@ -1,11 +1,11 @@
 
 ---
 
-# 🚀 **Hybrid VR Teleoperation and DRL-driven Autonomy in Mobile Robotics**
+# **Hybrid VR Teleoperation and DRL-driven Autonomy in Mobile Robotics**
 
 > **A hybrid control paradigm blending Immersive Virtual Reality (VR) Teleoperation with Deep Reinforcement Learning (DRL) for enhanced mobile robotic autonomy.**
 
-This repository demonstrates the **Distributed Supervisory Control (DSC)** method, a novel approach that intelligently combines human teleoperation via Virtual Reality (VR) and Deep Reinforcement Learning (DRL)-based autonomous navigation, validated both in simulation and real-world TurtleBot3 Burger robot deployments.
+***This repository demonstrates the **Distributed Supervisory Control (DSC)** method, a novel approach that intelligently combines human teleoperation via Virtual Reality (VR) and Deep Reinforcement Learning (DRL)-based autonomous navigation, validated both in simulation and real-world TurtleBot3 Burger robot deployments.***
 ---
 
 ## 🎬 Project Demo
