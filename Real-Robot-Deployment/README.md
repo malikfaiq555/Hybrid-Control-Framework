@@ -10,7 +10,7 @@ You can send goals from VR, RViz, or a teleop interface, and watch your robot na
 
 ```
 
-real_robot_deployment/
+Real-Robot-Deployment/
 ├── README.md
 ├── scripts/
 │   ├── real_env.py                 # Real-world TurtleBot3 environment (ROS)
