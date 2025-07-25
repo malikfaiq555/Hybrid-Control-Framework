@@ -149,10 +149,4 @@ Scripts/
 
 ---
 
-### 📝 License
 
-Specify your chosen license here (e.g., MIT, Apache 2.0).
-
----
-
-This comprehensive README clearly outlines each component’s purpose, usage, and provides practical references for customization and expansion.
