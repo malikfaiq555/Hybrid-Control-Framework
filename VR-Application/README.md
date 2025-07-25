@@ -25,7 +25,7 @@ VR_Application/
 - **Meta Quest 2** headset (formerly Oculus Quest 2)
 - [**Oculus Integration SDK**](https://developer.oculus.com/downloads/package/unity-integration/) for Unity
 - [**Unity Robotics Hub**](https://github.com/Unity-Technologies/Unity-Robotics-Hub) for ROS-Unity communication
-- **ROS Noetic** environment configured (see [ROS Setup](../ros_integration/README.md))
+- **ROS Noetic** environment configured (see [ROS Setup](http://wiki.ros.org/noetic/Installation/Ubuntu))
 
 
 ---
