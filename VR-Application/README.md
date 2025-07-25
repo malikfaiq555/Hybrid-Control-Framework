@@ -5,7 +5,7 @@ This directory contains scripts and components designed for integrating ROS (Rob
 ## Directory Structure
 
 ```
-VR_App/
+VR_Application/
 ├── README.md
 ├── scripts/
 │   ├── CompressedImageRenderer.cs
