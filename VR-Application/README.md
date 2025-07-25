@@ -15,6 +15,7 @@ VR_Application/
 │   ├── ROSPosePublisher.cs
 │   └── VRRobotController.cs
 └── assets/
+    └──  Turtlebot/TurtleBot3 Burger.dae
 ```
 
 ---
