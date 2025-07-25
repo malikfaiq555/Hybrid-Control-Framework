@@ -19,7 +19,7 @@ This module enables Deep Reinforcement Learning navigation training and simulati
 ## Directory Structure
 
 ```
-drl_navigation/
+DRL-Navigation/
 ├── README.md
 ├── scripts/
 │   ├── train_td3_tb3.py         # Training script (TD3, editable)
